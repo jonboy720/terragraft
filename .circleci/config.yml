@@ -17,6 +17,11 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!!"
+  delay-somewhat:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run: sleep 20
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
@@ -24,3 +29,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - delay-somewhat
