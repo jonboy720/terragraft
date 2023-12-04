@@ -30,3 +30,6 @@ workflows:
     jobs:
       - say-hello
       - delay-somewhat
+  another-workflow:
+    jobs:
+      - say-hello
